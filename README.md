@@ -36,3 +36,14 @@ hdmi_mode=87
 
 #1024x600 display
 hdmi_cvt=1024 600 60 3 0 0 0
+
+#LAUNCH.SH
+cd ~/processing-3.4/
+DISPLAY=:0 ./processing-java --sketch=/home/pi/app --present
+
+#give execution permission
+chmod +x /home/pi/Desktop/launch.sh
+
+#add a crontab job
+sudo crontab -e
+@reboot /home/pi/Desktop/launch.sh
